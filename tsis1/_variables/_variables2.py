@@ -9,3 +9,11 @@ _my_var = "John"
 myVar = "John"
 MYVAR = "John"
 myvar2 = "John"
+
+# multiple comments
+
+"""
+This is a comment
+written in 
+more that just one line
+"""
