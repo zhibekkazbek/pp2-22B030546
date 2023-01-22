@@ -3,13 +3,34 @@ y = "John"  # y is of type str
 print(x)
 print(y)
 
-# we can specify the data type of a variable
-x = str(3) # x will be a digit 3
-y = int(3) # y will be a integer number 3
-z = float(3) # z will be a 3.0
+x = 4       # x is of type int
+x = "Sally" # x is now of type str
+print(x)
 
-# or we can get the data type of a variable with the type() function
+x = str(3)
+y = int(3)
+z = float(3)
+
+print(x)
+print(y)
+print(z)
+
+
 x = 5
 y = "John"
 print(type(x)) # output will be : <class 'int'>
 print(type(y)) # output will be : <class 'str'>
+
+
+x = "John"
+print(x)
+#double quotes are the same as single quotes:
+x = 'John'
+print(x)
+
+
+a = 4
+A = "Sally"
+
+print(a)
+print(A)

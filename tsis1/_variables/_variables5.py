@@ -1,35 +1,25 @@
-# Global Variables
-# Global variables can be used by everyone, both inside of functions and outside.
+# Exersices 
 
-x = 'awesome'
+carname = "Volvo"
 
-def myfunc():
-    x = "fantastic"
-    print('Python is ' + x)
+x = 50
 
-myfunc()
+x = 5
+y = 10
+print(x + y)
 
-print("Python is " + x)
+x = 5
+y = 10
+z = x + y
+print(z)
 
-# The global Keyword
-# If you use the global keyword, the variable belongs to the global scope:
+myfirst_name = "John"
 
-def myfunc():
-    global x
-    x = 'fantastic'
-    
-myfunc()
-
-print("Python is " + x)
-
-# To change the value of a global variable inside a function, refer to the variable by using the global keyword:
-
-x = "awesome"
+x = y = z = "Orange"
 
 def myfunc():
   global x
   x = "fantastic"
-
 myfunc()
 
-print("Python is " + x)
+print(x)

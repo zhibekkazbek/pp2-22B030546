@@ -1,19 +1,34 @@
-# The upper() method returns the string in upper case:
-a = "Hello, World!"
-print(a.upper())
+# String Concatenation
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
 
-# The lower() method returns the string in lower case:
-a = "Hello, World!"
-print(a.lower())
+# To add a space between them, add a " ":
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
 
-# The strip() method removes any whitespace from the beginning or the end:
-a = " Hello, World! "
-print(a.strip()) # returns "Hello, World!"
 
-# The replace() method replaces a string with another string:
-a = "Hello, World!"
-print(a.replace("H", "J"))
+# String Format
 
-# The split() method splits the string into substrings if it finds instances of the separator:
-a = "Hello, World!"
-print(a.split(",")) # returns ['Hello', ' World!']
+# But we can combine strings and numbers by using the format() method!
+# The format() method takes the passed arguments, formats them, and places them in the string 
+# where the placeholders {} are:
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+
+# You can use index numbers {0} to be sure the arguments are placed in the correct placeholders:
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))

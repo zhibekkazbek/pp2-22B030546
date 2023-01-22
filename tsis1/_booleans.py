@@ -22,12 +22,7 @@ y = 15
 print(bool(x)) # true
 print(bool(y)) # true
 
-"""
-Almost any value is evaluated to True if it has some sort of content.
-Any string is True, except empty strings.
-Any number is True, except 0.
-Any list, tuple, set, and dictionary are True, except empty ones.
-"""
+# True
 bool("abc")
 bool(123)
 bool(["apple", "cherry", "banana"])
@@ -50,8 +45,39 @@ class myclass():
 myobj = myclass()
 print(bool(myobj)) # false
 
+def myFunction() :
+  return True
+
+print(myFunction()) # true
+
+def myFunction() :
+  return True
+
+if myFunction():
+  print("YES!")
+else:
+  print("NO!") # YES!
+
 # Python также имеет множество встроенных функций, возвращающих логическое значение, таких 
 # как функция isinstance(), которая может использоваться для определения того, 
 # относится ли объект к определенному типу данных:
 x = 200
-print(isinstance(x, int))
+print(isinstance(x, int)) # true
+
+
+# exersices
+
+print(10 > 9)
+True
+
+print(10 == 9)
+False
+
+print(10 < 9)
+False
+
+print(bool("abc"))
+True
+
+print(bool(0))
+False

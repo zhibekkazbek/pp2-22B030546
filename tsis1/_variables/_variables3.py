@@ -1,20 +1,20 @@
-# Python allows you to assign values to multiple variables in one line:
-x, y, z = "Orange", "Banana", "Cherry"
+x = "Python is awesome"
 print(x)
-print(y)
-print(z)
 
-# you can assign the same value to multiple variables in one line:
+x = "Python"
+y = "is"
+z = "awesome"
+print(x, y, z)
 
-x = y = z = "Orange"
-print(x)
-print(y)
-print(z)
+x = "Python "
+y = "is "
+z = "awesome"
+print(x + y + z)
 
-# If you have a collection of values in a list, tuple etc. 
-# Python allows you to extract the values into variables. This is called unpacking.
-fruits = ['apple', 'banana', 'cherry']
-x, y, z = fruits
-print(x)
-print(y)
-print(z)
+x = 5
+y = 10
+print(x + y)
+
+x = 5
+y = "John"
+print(x, y)

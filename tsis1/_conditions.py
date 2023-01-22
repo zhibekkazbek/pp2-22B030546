@@ -1,5 +1,8 @@
 # If statement:
 
+from this import d
+
+
 a = 33
 b = 200
 if b > a:
@@ -22,6 +25,13 @@ elif a == b:
   print("a and b are equal")
 else:
   print("a is greater than b")
+  
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
   
 # One line if statement:
 if a > b: print("a is greater than b")
@@ -67,3 +77,45 @@ b = 200
 
 if b > a:
   pass
+
+
+# exersices 
+
+a = 50
+b = 10
+if a > b:
+  print("Hello World")
+  
+a = 50
+b = 10
+if a != b:
+  print("Hello World")
+  
+a = 50
+b = 10
+if a == b:
+  print("Yes")
+else:
+  print("No")
+  
+a = 50
+b = 10
+if a == b:
+  print("1")
+elif a > b:
+  print("2")
+else:
+  print("3")
+  
+if a == b and c == d:
+  print("Hello")
+
+if a == b or c == d:
+  print("Hello")
+  
+if 5 > 2:
+  print("Five is greater than two!")
+  
+if 5 > 2: print("Five is greater than two!")
+
+print("Yes") if 5 > 2 else print("No")
