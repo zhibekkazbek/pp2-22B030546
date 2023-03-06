@@ -3,7 +3,7 @@
 import re
 
 txt = "Kbtu ab abb abbb aba Abba abc acd accc acddd a_ba a_v"
-pattern = "[A-Z][a-z]"
+pattern = "[A-Z][a-z]+"
 
 x = re.findall(pattern, txt)
 print(x)

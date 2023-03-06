@@ -2,8 +2,10 @@
 
 import re
 
-txt = "camelCaseString"
-pattern = r"(?<!^)(?=[A-Z])"
-snake = re.sub(pattern, '_', txt).lower()
+def func(Object):
+    return Object.group("g1")+ "_" + Object.group("g2").lower()
 
-print(snake)
+txt = "camelCaseString"
+pattern = r"(?P<g1>[a-z])(?P<g2>[A-Z])+"
+
+print(re.sub(pattern, func, txt))

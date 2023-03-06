@@ -5,5 +5,5 @@ import re
 
 txt = "Kbtu a abb Abc"
 
-x = re.split("[A-Z]", txt)
+x = re.findall("[A-Z][a-z]+", txt)
 print(x)

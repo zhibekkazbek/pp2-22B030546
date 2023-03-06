@@ -3,7 +3,5 @@
 import re
 
 txt = "kbtu ab abb abbb aba abba abc acd accc acddd"
-pattern = r'a(bb|bbb)'
-
-x = re.search(pattern, txt)
+x = re.findall("a.{2,3}b",txt)
 print(x)

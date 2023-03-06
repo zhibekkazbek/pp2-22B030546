@@ -4,5 +4,5 @@ import re
 
 txt = "kbtu ab abb abbb aba abba abc acd accc acddd"
 pattern = r"ab*"
-x = re.search(pattern, txt)
+x = re.findall(pattern, txt)
 print(x)

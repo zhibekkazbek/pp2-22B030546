@@ -1,13 +1,24 @@
 import json
-x = open(r'C:\Users\Сырым\Documents\pp2-22B030546\tsis4\json\data.json')
-y = json.load(x)
-print('''=======================================================================================
-DN                                                 Description           Speed    MTU" 
--------------------------------------------------- --------------------  ------  ------''')
-sample_data = y["data"]
-for i in sample_data:
-        dn = i["l1PhysIf"]["attributes"]["dn"]
-        descr = i["l1PhysIf"]["attributes"]["descr"]
-        speed = i["l1PhysIf"]["attributes"]["speed"]
-        mtu = i["l1PhysIf"]["attributes"]["mtu"]
-        print("{0:51} {1:20} {2:8} {3:6}".format(dn,descr,speed,mtu))
+
+with open(r"C:\Users\Сырым\Documents\pp2-22B030546\tsis4\json\data.json", "r") as read_file:
+    data = json.load(read_file)
+
+print("""Interface Status
+================================================================================
+DN                                                 Description           Speed    MTU  
+-------------------------------------------------- --------------------  ------  ------""")
+
+for x in data["imdata"]:
+    for y in x["l1PhysIf"]:
+        for f in x["l1PhysIf"][y]:
+            if f == 'dn':
+                DN = x["l1PhysIf"][y][f]
+            if f == "speed":
+                Speed = x["l1PhysIf"][y][f]
+            if f == "mtu":
+                MTU = x["l1PhysIf"][y][f]
+            if f == "description":
+                Description =  x["l1PhysIf"][y][f]
+            else: 
+                Description = ""
+    print(f"{DN}                            {Description}  {Speed}   {MTU}")
