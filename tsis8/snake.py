@@ -3,14 +3,13 @@ import pygame
 import sys
 
 pygame.init()
-pygame.font.init()
 
-WIDTH, HEIGHT = 800, 680
+WIDTH, HEIGHT = 800, 720
 BLOCK_SIZE = 40
-SCREEN = pygame.display.set_mode((WIDTH, HEIGHT+20))
+SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 clock = pygame.time.Clock()
-font = pygame.font.SysFont(pygame.font.get_default_font(), 27)
+font = pygame.font.SysFont("times new roman", 25, "bold")
 
 RED = (255, 0, 0)
 BLACK = (0, 0, 0)
@@ -19,7 +18,7 @@ GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 
 
-#defines point (cells) on screen
+#defines points on screen
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -74,11 +73,6 @@ class Snake():
         self.body[0].x += dx
         self.body[0].y += dy
 
-        #finishes the game when snake bites itself
-        for idx in range(len(self.body) - 1, 0, -1):
-            if self.body[idx].x == self.body[0].x and self.body[idx].y == self.body[0].y:
-                game_over()
-
         #keeps snake in playing area
         if self.body[0].x > WIDTH // BLOCK_SIZE:
             game_over()
@@ -125,18 +119,11 @@ class Food: #defines foods
                 self.location.y = random.randint(0, HEIGHT // BLOCK_SIZE - 1)
                 idx = len(snake_body) - 1
 
-def draw_grid():
-    #draw cells
+def draw_lines():
     for x in range(0, WIDTH, BLOCK_SIZE):
         pygame.draw.line(SCREEN, WHITE, start_pos=(x, 0), end_pos=(x, HEIGHT), width=1)
     for y in range(0, HEIGHT, BLOCK_SIZE):
         pygame.draw.line(SCREEN, WHITE, start_pos=(0, y), end_pos=(WIDTH, y), width=1)
-
-    #draw borders
-    pygame.draw.line(SCREEN, RED, start_pos=(0, HEIGHT-1), end_pos=(WIDTH-1, HEIGHT-1), width=1)  #bottom border
-    pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(0, HEIGHT), width=1)   #left border
-    pygame.draw.line(SCREEN, RED, start_pos=(WIDTH-1, 0), end_pos=(WIDTH-1, HEIGHT-1), width=1)   #right border
-    pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(WIDTH, 0), width=1)    #top border
 
 def game_over():
     print("game over")
@@ -148,7 +135,6 @@ def main():
     snake = Snake()
     food = Food(5, 5)
     dx, dy = 0, 0
-    prev = 'none'
     score = 0
     level = 0
 
@@ -159,20 +145,14 @@ def main():
 
             #prev - forbids going backwards if length   
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP and prev != 'down':
-                    prev = 'up'
+                if event.key == pygame.K_UP:
                     dx, dy = 0, -1
-                elif event.key == pygame.K_DOWN and prev != 'up':
-                    prev = 'down'
+                elif event.key == pygame.K_DOWN:
                     dx, dy = 0, 1
-                elif event.key == pygame.K_RIGHT and prev != 'left':
-                    prev = 'right'
+                elif event.key == pygame.K_RIGHT:
                     dx, dy = +1, 0
-                elif event.key == pygame.K_LEFT and prev != 'right':
-                    prev = 'left'
+                elif event.key == pygame.K_LEFT:
                     dx, dy = -1, 0
-                elif event.key == pygame.K_q:
-                    running = False
 
         snake.move(dx, dy)
 
@@ -185,20 +165,17 @@ def main():
             snake.body.append(
                 Point(snake.body[-1].x, snake.body[-1].y)
             )
-        
-        #snake can go backwards if len == 1
-        if len(snake.body) == 1: prev = 'none'
 
-        score_font = font.render('Score: ' + str(score), True, (255, 255, 255))
-        level_font = font.render('Level: ' + str(level), True, (255, 255, 255))
+        score_font = font.render('Score: ' + str(score), True, BLUE)
+        level_font = font.render('Level: ' + str(level), True, BLUE)
 
         SCREEN.fill(BLACK)
-        SCREEN.blit(score_font, (0, HEIGHT))
-        SCREEN.blit(level_font, (WIDTH // 2, HEIGHT))
+        SCREEN.blit(score_font, (0, 5))
+        SCREEN.blit(level_font, (0, 25))
 
         snake.draw()
         food.draw()
-        draw_grid()
+        draw_lines()
 
         pygame.display.flip()
         clock.tick(2 * level + 5)
