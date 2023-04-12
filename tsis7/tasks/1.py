@@ -6,9 +6,9 @@ pygame.init()
 WIDTH, HEIGTH = 600, 600
 screen = pygame.display.set_mode((WIDTH, HEIGTH))
 pygame.display.set_caption("Mickey Clock")
-mickey = pygame.image.load('main-clock.png')
-right_hand = pygame.image.load('right-hand.png')
-left_hand = pygame.image.load('left-hand.png')
+mickey = pygame.image.load(r'C:\Users\Сырым\Documents\pp2-22B030546\tsis7\tasks\main-clock.png')
+right_hand = pygame.image.load(r'C:\Users\Сырым\Documents\pp2-22B030546\tsis7\tasks\right-hand.png')
+left_hand = pygame.image.load(r'C:\Users\Сырым\Documents\pp2-22B030546\tsis7\tasks\left-hand.png')
 
 clock = pygame.transform.scale(mickey, (WIDTH, HEIGTH))
 Clock = pygame.time.Clock()
