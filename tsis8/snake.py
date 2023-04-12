@@ -119,11 +119,18 @@ class Food: #defines foods
                 self.location.y = random.randint(0, HEIGHT // BLOCK_SIZE - 1)
                 idx = len(snake_body) - 1
 
-def draw_lines():
+def draw_lines(): # draw lines 
     for x in range(0, WIDTH, BLOCK_SIZE):
         pygame.draw.line(SCREEN, WHITE, start_pos=(x, 0), end_pos=(x, HEIGHT), width=1)
     for y in range(0, HEIGHT, BLOCK_SIZE):
         pygame.draw.line(SCREEN, WHITE, start_pos=(0, y), end_pos=(WIDTH, y), width=1)
+        
+#draw borders
+pygame.draw.line(SCREEN, RED, start_pos=(0, HEIGHT-1), end_pos=(WIDTH-1, HEIGHT-1), width=1)  #bottom border
+pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(0, HEIGHT), width=1)   #left border
+pygame.draw.line(SCREEN, RED, start_pos=(WIDTH-1, 0), end_pos=(WIDTH-1, HEIGHT-1), width=1)   #right border
+pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(WIDTH, 0), width=1)    #top border
+
 
 def game_over():
     print("game over")
