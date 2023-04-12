@@ -9,7 +9,7 @@ SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 BLACK = pygame.Color(0, 0, 0)
 WHITE = pygame.Color(255, 255, 255)
-GRAY = pygame.Color(127, 127, 127)
+RED = pygame.Color(255, 0, 0)
 
 
 class GameObject:
@@ -21,7 +21,7 @@ class GameObject:
 
 
 class Button(pygame.sprite.Sprite):
-    def __init__(self, points, width=0, color=GRAY):
+    def __init__(self, points, width=0, color=RED):
         super().__init__()
 
         self.points = points
