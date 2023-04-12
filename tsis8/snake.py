@@ -126,10 +126,10 @@ def draw_lines(): # draw lines
         pygame.draw.line(SCREEN, WHITE, start_pos=(0, y), end_pos=(WIDTH, y), width=1)
         
 #draw borders
-pygame.draw.line(SCREEN, RED, start_pos=(0, HEIGHT-1), end_pos=(WIDTH-1, HEIGHT-1), width=1)  #bottom border
-pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(0, HEIGHT), width=1)   #left border
-pygame.draw.line(SCREEN, RED, start_pos=(WIDTH-1, 0), end_pos=(WIDTH-1, HEIGHT-1), width=1)   #right border
-pygame.draw.line(SCREEN, RED, start_pos=(0, 0), end_pos=(WIDTH, 0), width=1)    #top border
+pygame.draw.line(SCREEN, BLUE, start_pos=(0, HEIGHT-1), end_pos=(WIDTH-1, HEIGHT-1), width=1)  #bottom border
+pygame.draw.line(SCREEN, BLUE, start_pos=(0, 0), end_pos=(0, HEIGHT), width=1)   #left border
+pygame.draw.line(SCREEN, BLUE, start_pos=(WIDTH-1, 0), end_pos=(WIDTH-1, HEIGHT-1), width=1)   #right border
+pygame.draw.line(SCREEN, BLUE, start_pos=(0, 0), end_pos=(WIDTH, 0), width=1)    #top border
 
 
 def game_over():
