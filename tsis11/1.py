@@ -18,7 +18,7 @@ def add_data():
         name   = input("Enter name: ")
         number = input("Enter number: ")
         
-        if "--" in name or "--" in number:       # preventing SQL-injection
+        if "--" in name or "--" in number:       
             print("Error")
             return
 

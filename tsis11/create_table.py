@@ -14,7 +14,7 @@ try:
 
     with connection.cursor() as cursor:
         cursor.execute(
-            """CREATE TABLE TSIS11(
+            """CREATE TABLE book(
             Name varchar(20) NOT NULL,
             Number varchar(20) NOT NULL)"""
         )
