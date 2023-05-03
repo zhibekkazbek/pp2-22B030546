@@ -78,7 +78,8 @@ class Wall:
     def __init__(self, level):
         self.level = level
         self.body = []
-        f = open(r"levels\level{self.level}.txt", "r")
+        path = r"C:\Users\Сырым\Documents\pp2-22B030546\tsis10\2\levels\\"
+        f = open(f"{path}level{self.level}.txt", "r")
 
         for y in range(0, height // snake_block + 1):
             for x in range(0, width // snake_block + 1):
