@@ -12,4 +12,4 @@ CREATE OR REPLACE PROCEDURE add_one(contact_name VARCHAR(20), contact_number VAR
 		END IF;
 		
 	END; $$
-	LANGUAGE 'plpgsql';
+	LANGUAGE 'plpgsql'

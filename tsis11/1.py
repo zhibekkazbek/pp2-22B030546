@@ -35,7 +35,7 @@ def add_data():
 
         with open(path) as file:
             data = csv.reader(file)
-            next(data)  # skipping header
+            next(data) 
 
             for row in data:
                 if "--" in row[0] or "--" in row[1]: # preventing SQL-injection
@@ -87,13 +87,8 @@ def query_all():
 
 def query_pagination():
     limit, offset = input("Enter upper limit: "), input("Enter offset: ")
-
-    query_value = input("Enter query: ")
-    if "--" in query_value or "--" in limit or "--" in offset:       # preventing SQL-injection
-        print("Error")
-        return
     
-    cur.callproc('query_pagination', (query_value, limit, offset))
+    cur.callproc('query_pagination', (limit, offset))
 
     result = cur.fetchall()
     if len(result) == 0:

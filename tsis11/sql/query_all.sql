@@ -1,7 +1,7 @@
 -- DROP FUNCTION IF EXISTS public.query_all(integer, character varying);
 
 CREATE OR REPLACE FUNCTION query_all(query_mode INT, query_value VARCHAR(20))
-    RETURNS TABLE(name VARCHAR(20), number NUMERIC(20))
+    RETURNS TABLE(name VARCHAR(20), number VARCHAR(20))
 	AS $$ BEGIN
         IF query_mode = 1 THEN
             RETURN QUERY
@@ -24,4 +24,4 @@ CREATE OR REPLACE FUNCTION query_all(query_mode INT, query_value VARCHAR(20))
         END IF;
 		
     END; $$
-	LANGUAGE 'plpgsql';
+	LANGUAGE plpgsql

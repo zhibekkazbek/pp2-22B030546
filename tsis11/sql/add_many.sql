@@ -23,4 +23,4 @@ CREATE OR REPLACE PROCEDURE add_many(IN list TEXT[], INOUT insert_res TEXT[])
 			END LOOP;
 			insert_res := insertion;
 	END; $$
-	LANGUAGE 'plpgsql';
+	LANGUAGE plpgsql;
